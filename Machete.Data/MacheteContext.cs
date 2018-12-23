@@ -60,6 +60,7 @@ namespace Machete.Data
         public DbSet<ReportDefinition> ReportDefinitions { get; set; }
         public DbSet<TransportProvider> TransportProviders { get; set; }
         public DbSet<TransportProviderAvailability> TransportProvidersAvailability { get; set; }
+        public DbSet<TransportProviderAvailabilityOverride> TransportProvidersAvailabilityOverrides { get; set; }
         public DbSet<TransportVehicle> TransportVehicles { get; set; }
         public DbSet<TransportVehicleAvailability> TransportVehicleAvailabilities { get; set; }
         public DbSet<TransportVehicleAvailabilityOverride> TransportVehicleAvailabilityOverrides { get; set; }
@@ -118,6 +119,7 @@ namespace Machete.Data
             modelBuilder.Configurations.Add(new EmailBuilder());
             modelBuilder.Configurations.Add(new TransportProviderBuilder());
             modelBuilder.Configurations.Add(new TransportProvidersAvailabilityBuilder());
+            modelBuilder.Configurations.Add(new TransportProvidersAvailabilityOverrideBuilder());
             modelBuilder.Configurations.Add(new TransportRuleBuilder());
             modelBuilder.Configurations.Add(new TransportCostRuleBuilder());
             modelBuilder.Configurations.Add(new ScheduleRuleBuilder());
@@ -303,6 +305,17 @@ namespace Machete.Data
             HasKey(k => k.ID);
             HasRequired(p => p.Provider)
             .WithMany(e => e.AvailabilityRules)
+            .HasForeignKey(e => e.transportProviderID);
+        }
+    }
+
+    public class TransportProvidersAvailabilityOverrideBuilder : EntityTypeConfiguration<TransportProviderAvailabilityOverride>
+    {
+        public TransportProvidersAvailabilityOverrideBuilder()
+        {
+            HasKey(k => k.ID);
+            HasRequired(p => p.Provider)
+            .WithMany(e => e.AvailabilityRuleOverrides)
             .HasForeignKey(e => e.transportProviderID);
         }
     }
