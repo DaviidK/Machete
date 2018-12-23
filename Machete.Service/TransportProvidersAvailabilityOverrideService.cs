@@ -16,7 +16,7 @@ namespace Machete.Service
         public TransportProvidersAvailabilityOverrideService(IDatabaseFactory db, IMapper map) : base(db)
         {
             this.map = map;
-            this.logPrefix = "TransportProviderAvailabilityOverride";
+            this.logPrefix = "TPA-Override";
         }
     }
 }

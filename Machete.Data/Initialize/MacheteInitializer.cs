@@ -45,6 +45,10 @@ namespace Machete.Data
             {
                 MacheteTransports.Initialize(DB);
             }
+            if (DB.TransportVehicles.Count() == 0)
+            {
+                MacheteTransportVehicles.Initialize(DB);
+            }
             if (DB.Users.Count() == 0)   MacheteUsers.Initialize(DB);
             // MacheteCOnfigs.Initialize assumes Configs table has been populated by script
             if (DB.Configs.Count() == 0) MacheteConfigs.Initialize(DB);

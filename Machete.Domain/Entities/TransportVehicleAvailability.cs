@@ -8,7 +8,9 @@ namespace Machete.Domain
 {
     public class TransportVehicleAvailability : Record
     {
-        public int Day;
+        public virtual TransportVehicle TransportVehicle { get; set; } 
+        public int TransportVehicleID { get; set; }
+        public int Day { get; set; }
         public virtual ICollection<TransportVehicleAvailabilityTimeBlock> TimeBlocks { get; set; }
     }
 

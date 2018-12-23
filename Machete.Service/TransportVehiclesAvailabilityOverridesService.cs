@@ -5,15 +5,15 @@ using Machete.Domain;
 
 namespace Machete.Service
 {
-    public interface ITransportVehiclesAvailabilityService : IService<TransportVehicleAvailability>
+    public interface ITransportVehiclesAvailabilityOverridesService : IService<TransportVehicleAvailabilityOverride>
     {
 
     }
-    public class TransportVehiclesAvailabilityService : ServiceBase2<TransportVehicleAvailability>, ITransportVehiclesAvailabilityService
+    public class TransportVehiclesAvailabilityOverridesService : ServiceBase2<TransportVehicleAvailabilityOverride>, ITransportVehiclesAvailabilityOverridesService
     {
         private readonly IMapper map;
 
-        public TransportVehiclesAvailabilityService(IDatabaseFactory db, IMapper map) : base(db)
+        public TransportVehiclesAvailabilityOverridesService(IDatabaseFactory db, IMapper map) : base(db)
         {
             this.map = map;
             this.logPrefix = "TVA";

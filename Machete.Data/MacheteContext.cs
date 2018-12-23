@@ -293,7 +293,7 @@ namespace Machete.Data
                 .WillCascadeOnDelete();
             HasMany(e => e.TransportVehicles)
                 .WithRequired(w => w.TransportProvider)
-                .HasForeignKey(w => w.transportProviderID)
+                .HasForeignKey(w => w.TransportProviderID)
                 .WillCascadeOnDelete();
         }
     }

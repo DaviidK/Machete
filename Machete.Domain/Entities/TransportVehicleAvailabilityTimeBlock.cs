@@ -8,7 +8,8 @@ namespace Machete.Domain
 {
     public class TransportVehicleAvailabilityTimeBlock : Record
     {
-        public virtual TransportVehicleAvailability ParentAvailability { get; set; }
+        public virtual TransportVehicleAvailability TransportVehicleAvailability { get; set; }
+        public int TransportVehicleAvailabilityID { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
     }

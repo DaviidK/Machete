@@ -9,9 +9,9 @@ namespace Machete.Domain
 {
     public class TransportVehicle : Record
     {
-        public string Name;
-        public int Capacity;
-        public int transportProviderID { get; set; }
+        public string Name { get; set; }
+        public int Capacity { get; set; }
+        public int TransportProviderID { get; set; }
         public virtual TransportProvider TransportProvider { get; set; }
         public virtual ICollection<TransportVehicleAvailability> Availability { get; set; }
         public virtual ICollection<TransportVehicleAvailabilityOverride> AvailabilityOverrides { get; set; }
