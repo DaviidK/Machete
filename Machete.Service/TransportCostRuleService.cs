@@ -14,11 +14,11 @@ namespace Machete.Service
     {
 
     }
-    public class TransportCostRuleService : ServiceBase<TransportCostRule>, ITransportCostRuleService
+    public class TransportCostRuleService : ServiceBase2<TransportCostRule>, ITransportCostRuleService
     {
         private readonly IMapper map;
 
-        public TransportCostRuleService(ITransportCostRuleRepository repo, IUnitOfWork uow, IMapper map) : base(repo, uow)
+        public TransportCostRuleService(IDatabaseFactory db, IMapper map) : base(db)
         {
             this.map = map;
             this.logPrefix = "TransportCostRule";

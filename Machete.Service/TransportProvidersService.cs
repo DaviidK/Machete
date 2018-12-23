@@ -11,16 +11,16 @@ namespace Machete.Service
         TransportProviderAvailability CreateAvailability(int id, TransportProviderAvailability tpa, string user);
 
     }
-    public class TransportProvidersService : ServiceBase<TransportProvider>, ITransportProvidersService
+    public class TransportProvidersService : ServiceBase2<TransportProvider>, ITransportProvidersService
     {
         private readonly IMapper map;
         private readonly ITransportProvidersAvailabilityService tpaServ;
 
         public TransportProvidersService(
-            ITransportProvidersRepository repo, 
+            IDatabaseFactory db,
             ITransportProvidersAvailabilityService tpaServ,
-            IUnitOfWork uow, 
-            IMapper map) : base(repo, uow)
+
+            IMapper map) : base(db)
         {
             this.tpaServ = tpaServ;
             this.map = map;

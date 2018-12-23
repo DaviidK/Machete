@@ -9,11 +9,11 @@ namespace Machete.Service
     {
 
     }
-    public class TransportProvidersAvailabilityService : ServiceBase<TransportProviderAvailability>, ITransportProvidersAvailabilityService
+    public class TransportProvidersAvailabilityService : ServiceBase2<TransportProviderAvailability>, ITransportProvidersAvailabilityService
     {
         private readonly IMapper map;
 
-        public TransportProvidersAvailabilityService(ITransportProvidersAvailabilityRepository repo, IUnitOfWork uow, IMapper map) : base(repo, uow)
+        public TransportProvidersAvailabilityService(IDatabaseFactory db, IMapper map) : base(db)
         {
             this.map = map;
             this.logPrefix = "TransportRule";

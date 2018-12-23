@@ -42,11 +42,11 @@ namespace Machete.Web.App_Start
         .RegisterType<IActivityRepository, ActivityRepository>(new PerResolveLifetimeManager())
         .RegisterType<IConfigRepository, ConfigRepository>(new PerResolveLifetimeManager())
         .RegisterType<IActivitySigninRepository, ActivitySigninRepository>(new PerResolveLifetimeManager())
-        .RegisterType<ITransportProvidersRepository, TransportProvidersRepository>(new HierarchicalLifetimeManager())
-        .RegisterType<ITransportProvidersAvailabilityRepository, TransportProvidersAvailabilityRepository>(new HierarchicalLifetimeManager())
-        .RegisterType<ITransportRuleRepository, TransportRuleRepository>(new HierarchicalLifetimeManager())
-        .RegisterType<ITransportCostRuleRepository, TransportCostRuleRepository>(new HierarchicalLifetimeManager())
-        .RegisterType<IScheduleRuleRepository, ScheduleRuleRepository>(new HierarchicalLifetimeManager())
+        //.RegisterType<ITransportProvidersRepository, TransportProvidersRepository>(new HierarchicalLifetimeManager())
+        //.RegisterType<ITransportProvidersAvailabilityRepository, TransportProvidersAvailabilityRepository>(new HierarchicalLifetimeManager())
+        //.RegisterType<ITransportRuleRepository, TransportRuleRepository>(new HierarchicalLifetimeManager())
+        //.RegisterType<ITransportCostRuleRepository, TransportCostRuleRepository>(new HierarchicalLifetimeManager())
+        //.RegisterType<IScheduleRuleRepository, ScheduleRuleRepository>(new HierarchicalLifetimeManager())
 
         // 
         .RegisterType<IConfigService, ConfigService>(new PerResolveLifetimeManager())
