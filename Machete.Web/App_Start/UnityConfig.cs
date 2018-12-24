@@ -17,7 +17,7 @@ namespace Machete.Web.App_Start
         public static IUnityContainer GetUnityContainer()
         {
         //Create UnityContainer          
-        IUnityContainer container = new UnityContainer()
+        return new UnityContainer()
         //.RegisterType<IControllerActivator, CustomControllerActivator>()
         .RegisterType<IUserStore<MacheteUser>, UserStore<MacheteUser>>(new PerResolveLifetimeManager())//HttpContextLifetimeManager<IUserStore<ApplicationUser>>())
         .RegisterType<IMacheteUserManager<MacheteUser>, MacheteUserManager>(new PerResolveLifetimeManager())//HttpContextLifetimeManager<IMyUserManager<ApplicationUser>>())
@@ -57,11 +57,11 @@ namespace Machete.Web.App_Start
         .RegisterType<IEmployerService, EmployerService>(new PerResolveLifetimeManager())
         .RegisterType<IEmailService, EmailService>(new PerResolveLifetimeManager())
         .RegisterType<IWorkOrderService, WorkOrderService>(new PerResolveLifetimeManager())
-        .RegisterType<IOnlineOrdersService, OnlineOrdersService>(new PerResolveLifetimeManager())
         .RegisterType<IWorkAssignmentService, WorkAssignmentService>(new PerResolveLifetimeManager())
         .RegisterType<IImageService, ImageService>(new PerResolveLifetimeManager())
         .RegisterType<IReportService, ReportService>(new PerResolveLifetimeManager())
         .RegisterType<IReportsV2Service, ReportsV2Service>(new PerResolveLifetimeManager())
+        .RegisterType<IOnlineOrdersService, OnlineOrdersService>(new PerResolveLifetimeManager())
         .RegisterType<ITransportProvidersService, TransportProvidersService>(new HierarchicalLifetimeManager())
         .RegisterType<ITransportProvidersAvailabilityService, TransportProvidersAvailabilityService>(new HierarchicalLifetimeManager())
         .RegisterType<ITransportRuleService, TransportRuleService>(new HierarchicalLifetimeManager())
@@ -70,9 +70,8 @@ namespace Machete.Web.App_Start
         .RegisterType<ITransportVehiclesScheduleService, TransportVehiclesScheduleService>(new HierarchicalLifetimeManager())
         .RegisterType<IScheduleRuleService, ScheduleRuleService>(new HierarchicalLifetimeManager())
         // 
-        .RegisterType<IDefaults, Defaults>(new ContainerControlledLifetimeManager());
-
-        return container;
+        .RegisterType<IDefaults, Defaults>(new ContainerControlledLifetimeManager())
+		;
     }
 
 }

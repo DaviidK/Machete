@@ -45,12 +45,9 @@ namespace Machete.Api
             .RegisterType<IActivityRepository, ActivityRepository>(new HierarchicalLifetimeManager())
             .RegisterType<IConfigRepository, ConfigRepository>(new HierarchicalLifetimeManager())
             .RegisterType<IActivitySigninRepository, ActivitySigninRepository>(new HierarchicalLifetimeManager())
-            //.RegisterType<ITransportProvidersRepository, TransportProvidersRepository>(new HierarchicalLifetimeManager())
-            //.RegisterType<ITransportProvidersAvailabilityRepository, TransportProvidersAvailabilityRepository>(new HierarchicalLifetimeManager())
-            //.RegisterType<ITransportRuleRepository, TransportRuleRepository>(new HierarchicalLifetimeManager())
-            //.RegisterType<ITransportCostRuleRepository, TransportCostRuleRepository>(new HierarchicalLifetimeManager())
-            //.RegisterType<IScheduleRuleRepository, ScheduleRuleRepository>(new HierarchicalLifetimeManager())
-            // 
+
+
+        // 
             .RegisterType<IConfigService, ConfigService>(new HierarchicalLifetimeManager())
             .RegisterType<ILookupService, LookupService>(new HierarchicalLifetimeManager())
             .RegisterType<IActivitySigninService, ActivitySigninService>(new HierarchicalLifetimeManager())
@@ -72,6 +69,8 @@ namespace Machete.Api
             .RegisterType<ITransportProvidersAvailabilityService, TransportProvidersAvailabilityService>(new HierarchicalLifetimeManager())
             .RegisterType<ITransportRuleService, TransportRuleService>(new HierarchicalLifetimeManager())
             .RegisterType<ITransportCostRuleService, TransportCostRuleService>(new HierarchicalLifetimeManager())
+        .RegisterType<ITransportVehiclesService, TransportVehiclesService>(new HierarchicalLifetimeManager())
+        .RegisterType<ITransportVehiclesScheduleService, TransportVehiclesScheduleService>(new HierarchicalLifetimeManager())
             .RegisterType<IScheduleRuleService, ScheduleRuleService>(new HierarchicalLifetimeManager())
             ;
         }
