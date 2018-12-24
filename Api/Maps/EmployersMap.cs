@@ -11,14 +11,17 @@ namespace Machete.Api.Maps
     {
         public EmployersMap()
         {
-            CreateMap<Service.DTO.EmployersList, Employer>();
-            CreateMap<Domain.Employer, Employer>();
+            //CreateMap<Service.DTO.EmployersList, Employer>();
+            CreateMap<Domain.Employer, Employer>()
+                .ForMember(v => v.idString, opt => opt.Ignore())
+                ;
             CreateMap<Employer, Domain.Employer>()
                 .ForMember(v => v.datecreated, opt => opt.Ignore())
                 .ForMember(v => v.dateupdated, opt => opt.Ignore())
                 .ForMember(v => v.createdby, opt => opt.Ignore())
                 .ForMember(v => v.updatedby, opt => opt.Ignore())
                 .ForMember(v => v.ID, opt => opt.Ignore())
+                .ForMember(v => v.WorkOrders, opt => opt.Ignore())
                 .ForMember(v => v.onlineSigninID, opt => opt.Ignore())
                 .ForMember(v => v.licenseplate, opt => opt.Ignore())
                 .ForMember(v => v.driverslicense, opt => opt.Ignore())

@@ -25,6 +25,8 @@ namespace Machete.Api
                 c.AddProfile<TransportRulesMap>();
                 c.AddProfile<TransportProvidersMap>();
                 c.AddProfile<ScheduleRulesMap>();
+                c.AddProfile<TransportVehiclesMap>();
+                c.AddProfile<TransportVehiclesScheduleMap>();
             });
         }
         public IMapper getMapper()

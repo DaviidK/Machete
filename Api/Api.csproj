@@ -232,6 +232,7 @@
     <Compile Include="Maps\MapperConfig.cs" />
     <Compile Include="Maps\ReportDefinitionsMap.cs" />
     <Compile Include="Maps\ScheduleRulesMap.cs" />
+    <Compile Include="Maps\TransportVehiclesMap.cs" />
     <Compile Include="Maps\TransportRulesMap.cs" />
     <Compile Include="Maps\WorkAssignmentsMap.cs" />
     <Compile Include="Maps\WorkOrdersMap.cs" />
