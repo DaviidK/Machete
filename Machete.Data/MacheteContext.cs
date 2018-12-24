@@ -391,7 +391,11 @@ namespace Machete.Data
     {
         public TransportVehicleScheduleBuilder()
         {
-            HasKey(k => k.ID);
+            HasKey(k => k.ID)
+                 .HasMany(c => c.JoinTransportVehicleScheduleWorkOrder)
+                .WithRequired(r => r.TransportVehicleSchedule)
+                .HasForeignKey(k => k.TransportVehicleScheduleID)
+                .WillCascadeOnDelete();
 
         }
     }

@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 using Machete.Data;
 using Machete.Data.Infrastructure;
 using Machete.Service;
@@ -66,6 +66,8 @@ namespace Machete.Web.App_Start
         .RegisterType<ITransportProvidersAvailabilityService, TransportProvidersAvailabilityService>(new HierarchicalLifetimeManager())
         .RegisterType<ITransportRuleService, TransportRuleService>(new HierarchicalLifetimeManager())
         .RegisterType<ITransportCostRuleService, TransportCostRuleService>(new HierarchicalLifetimeManager())
+        .RegisterType<ITransportVehiclesService, TransportVehiclesService>(new HierarchicalLifetimeManager())
+        .RegisterType<ITransportVehiclesScheduleService, TransportVehiclesScheduleService>(new HierarchicalLifetimeManager())
         .RegisterType<IScheduleRuleService, ScheduleRuleService>(new HierarchicalLifetimeManager())
         // 
         .RegisterType<IDefaults, Defaults>(new ContainerControlledLifetimeManager());

@@ -359,6 +359,7 @@
     <Compile Include="Integration\Fluent\FRB-ScheduleProviderAvailabilities.cs" />
     <Compile Include="Integration\Fluent\FRB-ScheduleRules.cs" />
     <Compile Include="Integration\Fluent\FRB-TransportProviders.cs" />
+    <Compile Include="Integration\Fluent\FRB-TransportVehicles.cs" />
     <Compile Include="Integration\Fluent\FRB-TransportRules.cs" />
     <Compile Include="Integration\Fluent\FRB-WorkAssignment.cs" />
     <Compile Include="Integration\Fluent\FRB-WorkerSignins.cs" />
@@ -371,6 +372,7 @@
     <Compile Include="Integration\Services\EmailServiceTests.cs" />
     <Compile Include="Integration\Services\EventServiceTests.cs" />
     <Compile Include="Integration\Services\ReportsV2ServiceTests.cs" />
+    <Compile Include="Integration\Services\TransportSchedulingTests.cs" />
     <Compile Include="Integration\Services\WorkAssignmentServiceTest.cs" />
     <Compile Include="Integration\Services\WorkerSigninServiceTest.cs" />
     <Compile Include="Integration\Services\WorkOrderServiceTest.cs" />

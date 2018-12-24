@@ -326,6 +326,7 @@
     <Compile Include="TransportVehiclesAvailabilityOverridesTimeBlockService.cs" />
     <Compile Include="TransportVehiclesAvailabilityTimeBlockService.cs" />
     <Compile Include="TransportVehiclesAvailabilityService.cs" />
+    <Compile Include="TransportVehiclesScheduleService.cs" />
     <Compile Include="TransportVehiclesService.cs" />
     <Compile Include="TransportProvidersAvailabilityService.cs" />
     <Compile Include="TransportProvidersService.cs" />
