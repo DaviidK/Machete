@@ -1,12 +1,7 @@
-﻿using Machete.Data;
-using Machete.Domain;
+﻿using Machete.Domain;
 using Machete.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
+using System;
 
 namespace Machete.Test.Integration
 {
