@@ -73,19 +73,22 @@ namespace Machete.Data
                 var tva_array = c.TransportVehicleAvailabilities.Where(a => a.TransportVehicleID == v1.ID);
                 foreach (var tva in tva_array)
                 {
-                    c.TransportVehicleAvailabilityTimeBlocks.Add(
-                        new Domain.TransportVehicleAvailabilityTimeBlock
-                        {
-                            TransportVehicleAvailability = tva,
-                            TransportVehicleAvailabilityID = tva.ID,
-                            StartTime = DateTime.Now,
-                            EndTime = DateTime.Now,
-                            datecreated = DateTime.Now,
-                            dateupdated = DateTime.Now,
-                            createdby = "Init T. Script",
-                            updatedby = "Init T. Script"
-                        }
-                    );
+                    for (var i = 0; i < 5; i++)
+                    {
+                        c.TransportVehicleAvailabilityTimeBlocks.Add(
+                            new Domain.TransportVehicleAvailabilityTimeBlock
+                            {
+                                TransportVehicleAvailability = tva,
+                                TransportVehicleAvailabilityID = tva.ID,
+                                StartTime = DateTime.Today.AddHours(9+i),
+                                EndTime = DateTime.Today.AddHours(9+i).AddMinutes(45),
+                                datecreated = DateTime.Now,
+                                dateupdated = DateTime.Now,
+                                createdby = "Init T. Script",
+                                updatedby = "Init T. Script"
+                            }
+                        );
+                    }
                 }
                 c.SaveChanges();
             }
