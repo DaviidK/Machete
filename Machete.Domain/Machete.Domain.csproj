@@ -304,6 +304,7 @@
     <Compile Include="Entities\TransportVehicleAvailability.cs" />
     <Compile Include="Entities\TransportVehicleAvailabilityTimeBlock.cs" />
     <Compile Include="Entities\TransportVehicleSchedule.cs" />
+    <Compile Include="Entities\TransportVehicleScheduleLoadHistory.cs" />
     <Compile Include="Entities\WorkAssignment.cs" />
     <Compile Include="Entities\Worker.cs" />
     <Compile Include="Entities\WorkerRequest.cs" />

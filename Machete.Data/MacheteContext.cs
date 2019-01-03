@@ -67,6 +67,7 @@ namespace Machete.Data
         public DbSet<TransportVehicleAvailabilityTimeBlock> TransportVehicleAvailabilityTimeBlocks { get; set; }
         public DbSet<TransportVehicleAvailabilityOverrideTimeBlock> TransportVehicleAvailabilityOverrideTimeBlocks { get; set; }
         public DbSet<TransportVehicleSchedule> TransportVehicleSchedules { get; set; }
+        public DbSet<TransportVehicleScheduleLoadHistory> TransportVehicleScheduleLoads { get; set; }
 
         public DbSet<TransportRule> TransportRules { get; set; }
         public DbSet<TransportCostRule> TransportCostRules { get; set; }
@@ -347,6 +348,10 @@ namespace Machete.Data
         public TransportVehicleBuilder()
         {
             HasKey(k => k.ID);
+            HasMany(l => l.TransportVehicleScheduleLoads)
+                .WithRequired(r => r.TransportVehicle)
+                .HasForeignKey(k => k.TransportVehicleId)
+                .WillCascadeOnDelete();
 
         }
     }
@@ -396,7 +401,14 @@ namespace Machete.Data
                 .WithRequired(r => r.TransportVehicleSchedule)
                 .HasForeignKey(k => k.TransportVehicleScheduleID)
                 .WillCascadeOnDelete();
+        }
+    }
 
+    public class TransportVehicleScheduleLoadHistoryBuilder : EntityTypeConfiguration<TransportVehicleScheduleLoadHistory>
+    {
+        public TransportVehicleScheduleLoadHistoryBuilder()
+        {
+            HasKey(k => k.ID);
         }
     }
 

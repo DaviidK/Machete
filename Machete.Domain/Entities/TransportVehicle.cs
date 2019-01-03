@@ -11,10 +11,16 @@ namespace Machete.Domain
     {
         public string Name { get; set; }
         public int Capacity { get; set; }
+        public bool Active { get; set; }
         public int TransportProviderID { get; set; }
         public virtual TransportProvider TransportProvider { get; set; }
         public virtual ICollection<TransportVehicleAvailability> Availability { get; set; }
         public virtual ICollection<TransportVehicleAvailabilityOverride> AvailabilityOverrides { get; set; }
+        public virtual ICollection<TransportVehicleScheduleLoadHistory> TransportVehicleScheduleLoads { get; set; }
 
+        public TransportVehicle()
+        {
+            Active = false;
+        }
     }
 }

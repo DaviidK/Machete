@@ -18,6 +18,7 @@ namespace Machete.Data
                     new Domain.TransportVehicle {
                         Name = van1,
                         Capacity = 10,
+                        Active = true,
                         TransportProviderID = c.TransportProviders.Single(p => p.key == "transport_van").ID,
                         datecreated = DateTime.Now,
                         dateupdated = DateTime.Now,
@@ -29,6 +30,7 @@ namespace Machete.Data
                     {
                         Name = van2,
                         Capacity = 8,
+                        Active = true,
                         TransportProviderID = c.TransportProviders.Single(p => p.key == "transport_van").ID,
                         datecreated = DateTime.Now,
                         dateupdated = DateTime.Now,
@@ -80,8 +82,8 @@ namespace Machete.Data
                             {
                                 TransportVehicleAvailability = tva,
                                 TransportVehicleAvailabilityID = tva.ID,
-                                StartTime = DateTime.Today.AddHours(9+i),
-                                EndTime = DateTime.Today.AddHours(9+i).AddMinutes(45),
+                                StartTime = String.Format("",)DateTime.MinValue.AddHours(9+i),
+                                EndTime = DateTime.MinValue.AddHours(9+i).AddMinutes(45),
                                 datecreated = DateTime.Now,
                                 dateupdated = DateTime.Now,
                                 createdby = "Init T. Script",

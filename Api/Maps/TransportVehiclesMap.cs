@@ -20,6 +20,7 @@ namespace Machete.Api.Maps
         {
             CreateMap<Domain.TransportVehicleSchedule, ViewModel.TransportVehicleSchedule>()
                 .ForMember(v => v.id, opt => opt.MapFrom(d => d.ID))
+                .ForMember(v => v.TransportVehicleName, opt => opt.MapFrom(d => d.TransportVehicle.Name))
                 ;
         }
     }

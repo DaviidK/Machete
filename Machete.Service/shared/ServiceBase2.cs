@@ -33,7 +33,7 @@ namespace Machete.Service
             return dbset.AsNoTracking().Count();
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return dbset.AsNoTracking().AsQueryable();
         }

@@ -68,6 +68,7 @@ namespace Machete.Web.App_Start
         .RegisterType<ITransportCostRuleService, TransportCostRuleService>(new HierarchicalLifetimeManager())
         .RegisterType<ITransportVehiclesService, TransportVehiclesService>(new HierarchicalLifetimeManager())
         .RegisterType<ITransportVehiclesScheduleService, TransportVehiclesScheduleService>(new HierarchicalLifetimeManager())
+        .RegisterType<ITransportVehiclesScheduleLoadHistoryService, TransportVehiclesScheduleLoadHistoryService>(new HierarchicalLifetimeManager())
         .RegisterType<IScheduleRuleService, ScheduleRuleService>(new HierarchicalLifetimeManager())
         // 
         .RegisterType<IDefaults, Defaults>(new ContainerControlledLifetimeManager())
