@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using Machete.Data.Tenancy;
 using Machete.Domain;
 using Machete.Service;
 using Machete.Web.Helpers.Api;
@@ -21,9 +22,13 @@ namespace Machete.Web.Controllers.Api
         protected string UserEmail => User?.FindFirst(CAType.email)?.Value;
         protected IService<TD> service;
         protected IMapper map;
+        protected readonly TenantMapping tenants;
+        protected string tenantHostname;
         protected void Initialize(ControllerContext controllerContext)
+        
         {
             ControllerContext = controllerContext;
+            tenantHostname = ControllerContext.HttpContext.Request.Host.Host;
         }
 
         protected MacheteApi2Controller(IService<TD> service, IMapper map) 

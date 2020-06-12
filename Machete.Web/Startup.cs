@@ -95,7 +95,7 @@ namespace Machete.Web
             {
                 options.MaxValidationDepth = 4; // if there is a recursive error, don't go crazy
                 options.SuppressChildValidationForOneToManyRelationships();
-                // if (LocalEnv.IsDevelopment()) options.Filters.Add(new AllowAnonymousFilter());
+                if (LocalEnv.IsDevelopment()) options.Filters.Add(new AllowAnonymousFilter());
                 // options.Filters.Add(new AuthorizeFilter()); }) // <~ for JWT auth                    
             })
             .AddJsonOptions(options =>
@@ -271,7 +271,7 @@ namespace Machete.Web
             {
                 var services = serviceScope.ServiceProvider;
                 var svc = services.GetService<ILookupService>();
-                //svc.populateStaticIds();
+                svc.populateStaticIds();
             }
         }
     }
